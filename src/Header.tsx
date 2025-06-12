@@ -5,7 +5,7 @@ export  function Header() {
 
         
 
-        <nav className="p-4 flex flex-row justify-between align-center">
+        <nav className="mb-10 h-20 flex flex-row justify-between items-center">
             <div>
                 
                 <Link href="/">
