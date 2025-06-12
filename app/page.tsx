@@ -26,7 +26,7 @@ export default function Home() {
           <li>
             
     <div className="text-3xl font-bold text-red-500">
-      Hello Tailwind 👋
+      Hello Tailwindddd 👋
     </div>
           </li>
         </ol>
