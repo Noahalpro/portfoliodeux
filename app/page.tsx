@@ -23,6 +23,12 @@ export default function Home() {
           <li className="tracking-[-.01em]">
             Save and see your changes instantly.
           </li>
+          <li>
+            
+    <div className="text-3xl font-bold text-red-500">
+      Hello Tailwind 👋
+    </div>
+          </li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
