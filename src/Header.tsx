@@ -5,15 +5,15 @@ export  function Header() {
 
         
 
-        <nav className="mb-10 h-20 flex flex-row justify-between items-center">
-            <div>
+        <nav className="mb-10 h-20 flex flex-row justify-between items-center ">
+            <div className="relative z-10 text-white">
                 
-                <Link href="/">
+                <Link href="/" className="relative z-10 text-white">
                 NoahNzb
                 </Link>
             </div>
             <div>
-                <Link href="/contact">
+                <Link href="/contact" className="relative z-10 text-white">
                 Contact
                 </Link>
             </div>

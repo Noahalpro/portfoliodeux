@@ -1,15 +1,17 @@
 
 import Image from "next/image";
+import Scene1 from '../src/scene1';
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative z-10 text-white">
+      <Scene1 />
       <section>
       <div>
       
         <p>Que serait la technologie, sans mise en valeur ?</p>
       </div>
-
+  
       <div>
         <p>Une coquille qui répond à des besoin tout en étant éfficace c’est vrai</p>
       </div>
@@ -72,6 +74,8 @@ export default function Home() {
         </p>
         <button>Un projet ? Une collaboration ? Une question ?</button>
       </div>
+      
+        
       </section>
     </main>
   );
