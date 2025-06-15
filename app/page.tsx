@@ -1,10 +1,8 @@
-
-import Image from "next/image";
-import Scene1 from '../src/scene1';
+import Scene1 from '../src/scene1'; // OK comme ça
 
 export default function Home() {
   return (
-    <main className="relative z-10 text-white">
+    <main className="relative z-10 text-black">
       <Scene1 />
       <section>
       <div>

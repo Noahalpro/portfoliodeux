@@ -1,60 +1,46 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { useRef } from 'react';
+import { Mesh } from 'three';
+import { useFrame } from '@react-three/fiber';
+
+const SpinningCube = () => {
+  const meshRef = useRef<Mesh>(null);
+
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.03;
+      meshRef.current.rotation.x += 0.02;
+    }
+  });
+
+  return (
+    <mesh ref={meshRef} position={[4, 2, 0]}>
+      <boxGeometry args={[1.2,1.2,1.2]}/>
+      <meshLambertMaterial color="rgb(255, 60, 60)" emissive="rgb(150, 30, 30)" />
+
+    </mesh>
+  );
+};
 
 const Scene1 = () => {
-  const mountRef = useRef<HTMLDivElement>(null);
+  return (
+    <div className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none text-blak">
+      <Canvas camera={{ position: [0, 0, 5] }} 
+      
+  style={{ pointerEvents: 'none' }}>
+        
+        <color attach="background" args={['#ECECEC']} />
+        <ambientLight intensity={0.2} />
+        <directionalLight position={[5, 5, 5]} intensity={10} />
+        <SpinningCube />
+        <OrbitControls enableZoom={false} enablePan={false} />
 
-  useEffect(() => {
-    if (!mountRef.current) return;
-
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#000000');
-
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshLambertMaterial({
-      color: '#DC143C',
-      emissive: '#468585',
-    });
-
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    const light = new THREE.DirectionalLight(0x9cdba6, 10);
-    light.position.set(5, 5, 5).normalize();
-    scene.add(light);
-
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    mountRef.current.appendChild(renderer.domElement);
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    return () => {
-      mountRef.current?.removeChild(renderer.domElement);
-    };
-  }, []);
-
-    return (
-    <div
-      ref={mountRef}
-      className="fixed top-0 left-0 w-screen h-screen -z-10" // 👉 reste derrière
-    />
+      </Canvas>
+    </div>
   );
-}
+};
 
 export default Scene1;

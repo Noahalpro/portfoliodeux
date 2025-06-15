@@ -6,14 +6,14 @@ export  function Header() {
         
 
         <nav className="mb-10 h-20 flex flex-row justify-between items-center ">
-            <div className="relative z-10 text-white">
+            <div className="relative z-15 ">
                 
-                <Link href="/" className="relative z-10 text-white">
+                <Link href="/" className="relative z-15 text-black">
                 NoahNzb
                 </Link>
             </div>
             <div>
-                <Link href="/contact" className="relative z-10 text-white">
+                <Link href="/contact" className="relative z-15 text-black">
                 Contact
                 </Link>
             </div>
