@@ -19,7 +19,7 @@ const SpinningCube = () => {
   return (
     <mesh ref={meshRef} position={[4, 2, 0]}>
       <boxGeometry args={[1.2,1.2,1.2]}/>
-      <meshLambertMaterial color="rgb(255, 60, 60)" emissive="rgb(150, 30, 30)" />
+      <meshLambertMaterial color="rgb(209, 60, 255)" emissive="rgb(146, 30, 150)" />
 
     </mesh>
   );
@@ -27,7 +27,7 @@ const SpinningCube = () => {
 
 const Scene1 = () => {
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none text-blak">
+    <div className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none text-black">
       <Canvas camera={{ position: [0, 0, 5] }} 
       
   style={{ pointerEvents: 'none' }}>

@@ -1,10 +1,11 @@
+
 export default function ContactPage() {
   return (
     <main>
       <div>
-      <input type="text" name="nom"/>
-      <label htmlFor="nom">Votre nom</label>
-      </div>
+  <label htmlFor="nom">Votre nom</label>
+  <input type="text" name="nom" id="nom" />
+</div>
     </main>
   );
 }
