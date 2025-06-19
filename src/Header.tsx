@@ -21,7 +21,7 @@ export  function Header() {
             <div className="relative z-15 ">
                 
                 <Link href="/" className="text-neutral-750 font-bold text-xl hover:text-purple-400 transition-colors relative z-15 ">
-                NoahNzb
+                NoahNzbb
                 </Link>
             </div>
 
