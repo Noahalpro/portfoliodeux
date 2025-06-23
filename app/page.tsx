@@ -1,4 +1,4 @@
-import Scene1 from '../src/scene1'; // OK comme ça
+import Scene1 from '../composants/scene1'; // OK comme ça
 
 export default function Home() {
   return (
