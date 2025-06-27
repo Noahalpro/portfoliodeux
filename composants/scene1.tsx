@@ -27,7 +27,7 @@ const SpinningCube = () => {
 
 const Scene1 = () => {
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none text-black">
+    <div className="fixed top-0 left-0 w-screen h-screen -z-15 pointer-events-none text-black">
       <Canvas camera={{ position: [0, 0, 5] }} 
       
   style={{ pointerEvents: 'none' }}>

@@ -14,13 +14,10 @@ export  function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
     return (
-
-        
-
-        <nav className="max-w mx-auto h-20 flex flex-row justify-between items-center ">
-            <div className="relative z-15 ">
+        <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center ">
+            <div className="z-15">
                 
-                <Link href="/" className="text-neutral-750 font-bold text-xl hover:text-purple-400 transition-colors relative z-15 ">
+                <Link href="/" className="text-neutral-750 font-bold text-xl hover:text-purple-400 transition-colors z-15 ">
                 NoahNzbb
                 </Link>
             </div>
@@ -28,33 +25,44 @@ export  function Header() {
 
 
             
-            <div>
-
+    
+        <div className="flex z-15">
+            
                 
-        <button onClick={toggleMenu} className="text-xl z-20">
+        <button onClick={toggleMenu} className="text-xl z-30">
           <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
         </button>
         
 
             {isOpen && (
-                <ul className="flex gap-5">
+                <ul className="flex w-fit gap-5 z-30">
+                    
                     <li>
                         
-                <Link href="/contact" className="text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors relative z-15 ">
+                <Link href="/contact" className=" text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors z-15 ">
                 Contact
                 </Link>
                     </li>
+
+                    <li>
+                        
                     
-                <Link href="/" className="text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors relative z-15 ">
+                <Link href="/" className="text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors z-15 ">
                 Projets
                 
                 </Link>
+
+
+                    </li>
 
                 </ul>
                 
             )
         }
-            </div>
+
+        </div>
+    
+        
         </nav>
     );
 }
