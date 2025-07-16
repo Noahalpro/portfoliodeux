@@ -1,6 +1,9 @@
+// components/ContactForm.jsx
+"use client"; // Indique que ce composant est un client component dans Next.js
 
-'use client'
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,7 +11,64 @@ export default function ContactForm() {
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState(''); // Pour afficher le statut de l'envoi (succès, erreur, envoi en cours)
+  const [status, setStatus] = useState('');
+
+  const formRef = useRef(null);
+  const buttonRef = useRef(null);
+  const statusRef = useRef(null);
+  const svgScribbleRef = useRef(null); // Ref pour le chemin SVG du gribouillis
+
+  // Animation d'entrée du formulaire et du gribouillis SVG
+  useGSAP(() => {
+    if (formRef.current) {
+      gsap.fromTo(formRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+      );
+    }
+
+    // Animation du gribouillis SVG
+    if (svgScribbleRef.current) {
+      const path = svgScribbleRef.current;
+      const length = path.getTotalLength(); // Obtenir la longueur totale du tracé SVG
+
+      // Définir l'état initial du tracé (invisible)
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length,
+        stroke: '#8B5CF6', // Couleur violette pour le tracé (Tailwind's purple-500)
+        strokeWidth: 3, // Épaisseur du tracé pour un effet de gribouillis plus visible
+        fill: 'none', // Pas de remplissage
+      });
+
+      // Animer le tracé pour qu'il se dessine
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        duration: 2.5, // Durée de l'animation de dessin (légèrement plus longue pour le gribouillis)
+        ease: 'power1.inOut',
+        delay: 0.7, // Délai après l'apparition du formulaire
+      });
+    }
+  }, { scope: formRef }); // Le scope inclut maintenant le formulaire et l'animation SVG
+
+  // Animations des inputs au focus/blur
+  const handleFocus = (e) => {
+    gsap.to(e.target, {
+      borderColor: '#6a6a6a', // Gris plus clair au focus
+      boxShadow: '0 0 0 3px rgba(106, 106, 106, 0.3)', // Ombre au focus
+      duration: 0.2,
+      ease: 'power2.out'
+    });
+  };
+
+  const handleBlur = (e) => {
+    gsap.to(e.target, {
+      borderColor: '#4a4a4a', // Couleur de bordure par défaut
+      boxShadow: 'none',
+      duration: 0.2,
+      ease: 'power2.out'
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,12 +79,14 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Empêche le rechargement par défaut de la page
+    e.preventDefault();
 
-    setStatus('Envoi en cours...'); // Indique que l'envoi est en cours
+    setStatus('Envoi en cours...');
+    // Animer l'apparition du message de statut
+    gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3 });
 
     try {
-      const response = await fetch('https://formspree.io/f/mkgznjgo', { // Cible l'API Route que nous allons créer
+      const response = await fetch('https://formspree.io/f/mkgznjgo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,86 +94,116 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json(); // Récupère la réponse de l'API
+      const data = await response.json();
 
       if (response.ok) {
         setStatus('Message envoyé avec succès !');
-        setFormData({ name: '', email: '', message: '' }); // Réinitialise les champs du formulaire
+        // Animer le message de succès
+        gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
+        setFormData({ name: '', email: '', message: '' }); // Réinitialise les champs
       } else {
         setStatus(`Erreur : ${data.message || 'Quelque chose a mal tourné.'}`);
+        // Animer le message d'erreur
+        gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
       }
     } catch (error) {
       console.error('Erreur lors de l\'envoi du formulaire:', error);
       setStatus('Erreur réseau. Veuillez réessayer plus tard.');
+      // Animer le message d'erreur réseau
+      gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
     }
   };
 
-  return (
-    <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md mx-auto my-10">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Contactez-moi</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-5">
-          <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-            Nom :
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-        <div className="mb-5">
-          <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-            Email :
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
-        <div className="mb-6">
-          <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
-            Message :
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300 ease-in-out transform hover:scale-105"
-        >
-          Envoyer
-        </button>
-      </form>
+  // Déterminer les classes Tailwind pour le message de statut
+  const getStatusClasses = () => {
+    if (status.includes('succès')) return 'bg-green-900/20 text-green-400 border-green-600';
+    if (status.includes('Erreur')) return 'bg-red-900/20 text-red-400 border-red-600';
+    if (status.includes('Envoi en cours')) return 'bg-blue-900/20 text-blue-400 border-blue-600';
+    return '';
+  };
 
-      {/* Affichage du statut du formulaire */}
-      {status && (
-        <p
-          className={`mt-6 p-3 rounded-md text-center font-semibold
-            ${status.includes('succès') ? 'bg-green-100 text-green-700 border border-green-400' : ''}
-            ${status.includes('Erreur') ? 'bg-red-100 text-red-700 border border-red-400' : ''}
-            ${status.includes('Envoi en cours') ? 'bg-blue-100 text-blue-700 border border-blue-400' : ''}
-          `}
-        >
-          {status}
-        </p>
-      )}
-    </div>
+  return (
+    <section className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 flex justify-center items-center min-h-[calc(100vh-160px)] overflow-hidden font-inter relative">
+      {/* SVG pour l'animation de gribouillis derrière le formulaire */}
+      <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none">
+        <svg className="w-[800px] h-[950px] max-w-full max-h-full" viewBox="0 0 550 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Ce chemin est conçu pour ressembler à un gribouillis qui entoure une zone rectangulaire */}
+          <path
+            ref={svgScribbleRef}
+            d="M 50 50 C 150 20, 350 80, 450 50 C 480 40, 520 100, 500 150 C 480 250, 520 350, 500 450 C 480 550, 520 610, 450 600 C 350 580, 150 620, 50 600 C 20 580, 80 480, 50 400 C 20 320, 80 220, 50 150 C 20 100, 80 60, 50 50 Z"
+          />
+        </svg>
+      </div>
+
+      <div ref={formRef} className="max-w-md w-full bg-[#282828] rounded-xl p-10 shadow-lg border border-[#333] text-left relative z-10">
+        <h1 className="text-4xl font-bold text-[#f0f0f0] mb-10 tracking-tight text-center relative z-20">Contactez-moi</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-5">
+            <label htmlFor="name" className="block text-[#b0b0b0] text-base font-semibold mb-2">
+              Nom :
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              required
+              className="w-full p-3 rounded-lg border border-[#4a4a4a] bg-[#3a3a3a] text-[#f0f0f0] text-base outline-none transition-all duration-300 ease-out"
+            />
+          </div>
+          <div className="mb-5">
+            <label htmlFor="email" className="block text-[#b0b0b0] text-base font-semibold mb-2">
+              Email :
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              required
+              className="w-full p-3 rounded-lg border border-[#4a4a4a] bg-[#3a3a3a] text-[#f0f0f0] text-base outline-none transition-all duration-300 ease-out"
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-[#b0b0b0] text-base font-semibold mb-2">
+              Message :
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              required
+              className="w-full p-3 rounded-lg border border-[#4a4a4a] bg-[#3a3a3a] text-[#f0f0f0] text-base min-h-[120px] resize-y outline-none transition-all duration-300 ease-out"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            ref={buttonRef}
+            className="block w-full bg-[#4a4a4a] text-[#f0f0f0] py-4 px-6 rounded-lg text-lg font-semibold transition-all duration-300 ease-out border-none cursor-pointer mt-8"
+            onMouseEnter={(e) => gsap.to(e.currentTarget, { backgroundColor: '#6a6a6a', y: -2, duration: 0.2, ease: 'power2.out' })}
+            onMouseLeave={(e) => gsap.to(e.currentTarget, { backgroundColor: '#4a4a4a', y: 0, duration: 0.2, ease: 'power2.out' })}
+          >
+            Envoyer
+          </button>
+        </form>
+
+        {/* Affichage du statut du formulaire */}
+        {status && (
+          <p ref={statusRef} className={`mt-5 p-4 rounded-lg text-center font-semibold text-base border ${getStatusClasses()}`}>
+            {status}
+          </p>
+        )}
+      </div>
+    </section>
   );
 }
