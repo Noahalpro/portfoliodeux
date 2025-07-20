@@ -1,5 +1,4 @@
-// components/ContactForm.jsx
-"use client"; // Indique que ce composant est un client component dans Next.js
+"use client";
 
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
@@ -13,12 +12,11 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState('');
 
-  const formRef = useRef(null);
-  const buttonRef = useRef(null);
-  const statusRef = useRef(null);
-  const svgScribbleRef = useRef(null); // Ref pour le chemin SVG du gribouillis
+  const formRef = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const statusRef = useRef<HTMLParagraphElement | null>(null);
+  const svgScribbleRef = useRef<SVGPathElement | null>(null);
 
-  // Animation d'entrée du formulaire et du gribouillis SVG
   useGSAP(() => {
     if (formRef.current) {
       gsap.fromTo(formRef.current,
@@ -27,50 +25,46 @@ export default function ContactForm() {
       );
     }
 
-    // Animation du gribouillis SVG
     if (svgScribbleRef.current) {
       const path = svgScribbleRef.current;
-      const length = path; // Obtenir la longueur totale du tracé SVG
+      const length = path.getTotalLength();
 
-      // Définir l'état initial du tracé (invisible)
       gsap.set(path, {
         strokeDasharray: length,
         strokeDashoffset: length,
-        stroke: '#8B5CF6', // Couleur violette pour le tracé (Tailwind's purple-500)
-        strokeWidth: 3, // Épaisseur du tracé pour un effet de gribouillis plus visible
-        fill: 'none', // Pas de remplissage
+        stroke: '#8B5CF6',
+        strokeWidth: 3,
+        fill: 'none',
       });
 
-      // Animer le tracé pour qu'il se dessine
       gsap.to(path, {
         strokeDashoffset: 0,
-        duration: 2.5, // Durée de l'animation de dessin (légèrement plus longue pour le gribouillis)
+        duration: 2.5,
         ease: 'power1.inOut',
-        delay: 0.7, // Délai après l'apparition du formulaire
+        delay: 0.7,
       });
     }
-  }, { scope: formRef }); // Le scope inclut maintenant le formulaire et l'animation SVG
+  }, { scope: formRef });
 
-  // Animations des inputs au focus/blur
-  const handleFocus = (e) => {
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     gsap.to(e.target, {
-      borderColor: '#6a6a6a', // Gris plus clair au focus
-      boxShadow: '0 0 0 3px rgba(106, 106, 106, 0.3)', // Ombre au focus
+      borderColor: '#6a6a6a',
+      boxShadow: '0 0 0 3px rgba(106, 106, 106, 0.3)',
       duration: 0.2,
       ease: 'power2.out'
     });
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     gsap.to(e.target, {
-      borderColor: '#4a4a4a', // Couleur de bordure par défaut
+      borderColor: '#4a4a4a',
       boxShadow: 'none',
       duration: 0.2,
       ease: 'power2.out'
     });
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -78,11 +72,10 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setStatus('Envoi en cours...');
-    // Animer l'apparition du message de statut
     gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3 });
 
     try {
@@ -98,23 +91,19 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('Message envoyé avec succès !');
-        // Animer le message de succès
         gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
-        setFormData({ name: '', email: '', message: '' }); // Réinitialise les champs
+        setFormData({ name: '', email: '', message: '' });
       } else {
         setStatus(`Erreur : ${data.message || 'Quelque chose a mal tourné.'}`);
-        // Animer le message d'erreur
         gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
       }
     } catch (error) {
       console.error('Erreur lors de l\'envoi du formulaire:', error);
       setStatus('Erreur réseau. Veuillez réessayer plus tard.');
-      // Animer le message d'erreur réseau
       gsap.fromTo(statusRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, delay: 0.1 });
     }
   };
 
-  // Déterminer les classes Tailwind pour le message de statut
   const getStatusClasses = () => {
     if (status.includes('succès')) return 'bg-green-900/20 text-green-400 border-green-600';
     if (status.includes('Erreur')) return 'bg-red-900/20 text-red-400 border-red-600';
@@ -124,10 +113,8 @@ export default function ContactForm() {
 
   return (
     <section className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 flex justify-center items-center min-h-[calc(100vh-160px)] overflow-hidden font-inter relative">
-      {/* SVG pour l'animation de gribouillis derrière le formulaire */}
       <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none">
         <svg className="w-[800px] h-[950px] max-w-full max-h-full" viewBox="0 0 550 650" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Ce chemin est conçu pour ressembler à un gribouillis qui entoure une zone rectangulaire */}
           <path
             ref={svgScribbleRef}
             d="M 50 50 C 150 20, 350 80, 450 50 C 480 40, 520 100, 500 150 C 480 250, 520 350, 500 450 C 480 550, 520 610, 450 600 C 350 580, 150 620, 50 600 C 20 580, 80 480, 50 400 C 20 320, 80 220, 50 150 C 20 100, 80 60, 50 50 Z"
@@ -177,7 +164,7 @@ export default function ContactForm() {
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows={5}
               value={formData.message}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -197,7 +184,6 @@ export default function ContactForm() {
           </button>
         </form>
 
-        {/* Affichage du statut du formulaire */}
         {status && (
           <p ref={statusRef} className={`mt-5 p-4 rounded-lg text-center font-semibold text-base border ${getStatusClasses()}`}>
             {status}
