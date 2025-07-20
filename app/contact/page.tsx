@@ -4,6 +4,7 @@
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { all } from 'three/tsl';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function ContactForm() {
     // Animation du gribouillis SVG
     if (svgScribbleRef.current) {
       const path = svgScribbleRef.current;
-      const length = path.getTotalLength(); // Obtenir la longueur totale du tracé SVG
+      const length = path; // Obtenir la longueur totale du tracé SVG
 
       // Définir l'état initial du tracé (invisible)
       gsap.set(path, {
