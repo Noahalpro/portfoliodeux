@@ -5,13 +5,12 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 
-// ✅ Données avec image locale en string
 const projectData = [
   {
     id: 1,
     title: 'Site E-commerce Front-end',
     description: 'Développement du front-end d’une plateforme e-commerce moderne avec React, Next.js et Tailwind CSS, offrant une interface fluide et intuitive.',
-    image: '/ImageTamp.png', // ✅ image dans /public
+    image: '/ImageTamp.png',
     link: 'https://tampp.vercel.app/',
   },
   {
@@ -143,7 +142,7 @@ const Projets = () => {
               ref={el => cardRefs.current[index] = el}
               className="relative bg-[#282828] rounded-xl p-8 shadow-lg border border-[#333] flex flex-col items-center text-center transition-transform duration-300 ease-out cursor-pointer will-change-transform"
             >
-              {/* ✅ Image standard en <img /> */}
+              {/* Image standard en <img /> */}
               <img
                 src={project.image}
                 alt={project.title}

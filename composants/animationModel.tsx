@@ -7,7 +7,6 @@ import * as THREE from 'three';
 
 import { Group } from 'three';
 
-// Déclare les types d'importation GLTF (facultatif si déjà globalement configuré)
 type GLTFResult = {
   scene: THREE.Group;
   animations: THREE.AnimationClip[];

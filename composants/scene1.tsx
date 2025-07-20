@@ -10,7 +10,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Component for glowing particles around the flower
 const FlowerParticles = ({ flowerPosition }: { flowerPosition: Vector3 }) => {
   const meshRef = useRef<Points>(null);
   const count = 100;
