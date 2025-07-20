@@ -24,10 +24,10 @@ export default function PlusieursTextes() {
   }, []);
 
   return (
-    <section className='text-xl text-left mx-auto'>
+    <section className='text-xl text-left mx-auto text-black '>
       <div>
       
-        <p className='texte-anim pt-[300px] pb-[1000px]'>Que serait la technologie, sans mise en valeur ?</p>
+        <p className='texte-anim pt-[300px] pb-[1000px] '>Que serait la technologie, sans mise en valeur ?</p>
       </div>
   
       <div>
