@@ -39,6 +39,12 @@ const FlowerParticles = ({ flowerPosition }: { flowerPosition: Vector3 }) => {
     return positionsArray;
   }, [count, radius]);
 
+  const geometry = useMemo(() => {
+    const geom = new THREE.BufferGeometry();
+    geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    return geom;
+  }, [positions]);
+
   useFrame(({ clock }) => {
     if (meshRef.current && flowerPosition) {
       meshRef.current.rotation.y = clock.getElapsedTime() * 3;
@@ -48,14 +54,7 @@ const FlowerParticles = ({ flowerPosition }: { flowerPosition: Vector3 }) => {
 
   return (
     <points ref={meshRef} position={flowerPosition}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          array={positions}
-          count={positions.length / 3}
-          itemSize={3}
-        />
-      </bufferGeometry>
+      <primitive object={geometry} attach="geometry" />
       <pointsMaterial
         color={new THREE.Color(0.831, 0.451, 0.831)}
         size={0.12}
@@ -68,6 +67,7 @@ const FlowerParticles = ({ flowerPosition }: { flowerPosition: Vector3 }) => {
     </points>
   );
 };
+
 
 const PortfolioModel = ({ scrollProgress }: { scrollProgress: MutableRefObject<number> }) => {
   const { set, camera: currentCamera } = useThree();
