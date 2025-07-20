@@ -17,7 +17,7 @@ export  function Header() {
         <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center bg-[#ECECEC]">
             <div className="z-15">
                 
-                <Link href="/" className="text-neutral-750 font-bold text-xl hover:text-purple-400 transition-colors z-15 ">
+                <Link href="/" className="text-white font-bold text-xl hover:text-purple-400 transition-colors z-15 ">
                 Noah Aldeguer
                 </Link>
             </div>
@@ -30,7 +30,7 @@ export  function Header() {
             
                 
         <button onClick={toggleMenu} className="text-xl z-30">
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
+          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="white"/>
         </button>
         
 
@@ -39,7 +39,7 @@ export  function Header() {
                     
                     <li>
                         
-                <Link href="/contact" className=" text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors z-15 ">
+                <Link href="/contact" className=" text-white font-bold text-l hover:text-purple-400 transition-colors z-15 ">
                 Contact
                 </Link>
                     </li>
@@ -47,7 +47,7 @@ export  function Header() {
                     <li>
                         
                     
-                <Link href="/" className="text-neutral-750 font-bold text-l hover:text-purple-400 transition-colors z-15 ">
+                <Link href="/" className="text-white font-bold text-l hover:text-purple-400 transition-colors z-15 ">
                 Projets
                 
                 </Link>

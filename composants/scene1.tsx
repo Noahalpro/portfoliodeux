@@ -190,7 +190,7 @@ const Scene1 = () => {
           dpr={[1, 2]}
           shadows
         >
-        <color attach="background" args={['#3a3a3a']} />
+        <color attach="background" args={['#282828']} />
           <ambientLight intensity={0.2} />
           <directionalLight position={[5, 10, 5]} intensity={0.5} />
 

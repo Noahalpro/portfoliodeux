@@ -12,7 +12,7 @@ const projectData = [
     title: 'Site E-commerce Front-end',
     description: 'Développement du front-end d’une plateforme e-commerce moderne avec React, Next.js et Tailwind CSS, offrant une interface fluide et intuitive.',
     image: '/ImageTamp.png', // ✅ image dans /public
-    link: '/projets/ecommerce',
+    link: 'https://tampp.vercel.app/',
   },
   {
     id: 2,

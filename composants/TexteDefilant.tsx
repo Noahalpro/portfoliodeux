@@ -24,7 +24,7 @@ export default function PlusieursTextes() {
   }, []);
 
   return (
-    <section className='text-xl text-left mx-auto text-black '>
+    <section className='text-xl text-left mx-auto text-white '>
       <div>
       
         <p className='texte-anim pt-[300px] pb-[1000px] '>Que serait la technologie, sans mise en valeur ?</p>
