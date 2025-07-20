@@ -4,6 +4,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
+// Import the Image component from Next.js for optimized images
+import Image from 'next/image';
 
 type Project = {
   id: number;
@@ -54,7 +56,8 @@ const generateRandomScribblePath = (basePath: string, maxOffset = 8): string => 
     const command = cmdStr[0];
     const coordsStr = cmdStr.substring(1).trim();
     const coords = coordsStr.split(/\s+/).filter(Boolean).map(Number);
-    let newCoords: number[] = [];
+    // FIX: Declare newCoords with `const` as it's not reassigned within the loop iteration
+    const newCoords: number[] = []; 
 
     if (command === 'Z') {
       newPath += command;
@@ -160,10 +163,14 @@ const Projets: React.FC = () => {
               ref={(el) => setCardRef(el, index)}
               className="relative bg-[#282828] rounded-xl p-8 shadow-lg border border-[#333] flex flex-col items-center text-center transition-transform duration-300 ease-out cursor-pointer will-change-transform"
             >
-              <img
+              {/* FIX: Replaced <img> with <Image /> for optimization */}
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={400} // Add appropriate width
+                height={200} // Add appropriate height, ensuring aspect ratio
                 className="w-full h-48 bg-[#3a3a3a] rounded-lg mb-6 object-cover border border-[#444] relative z-10"
+                priority={index < 2} // Prioritize loading for the first couple of images
               />
               <div className="relative w-full flex justify-center items-center mb-4">
                 <h3 className="text-3xl font-semibold text-[#f0f0f0] relative z-20">
@@ -177,12 +184,12 @@ const Projets: React.FC = () => {
                 </svg>
               </div>
               <p className="text-lg leading-relaxed text-[#b0b0b0] mb-6 flex-grow relative z-10">{project.description}</p>
-              <Link href={project.linkgit} passHref>
+              <Link href={project.linkgit} passHref legacyBehavior> {/* Added legacyBehavior for <span> child */}
                 <span className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px] my-6">
                   Voir le code source
                 </span>
               </Link>
-              <Link href={project.link} passHref>
+              <Link href={project.link} passHref legacyBehavior> {/* Added legacyBehavior for <span> child */}
                 <span className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px]">
                   Voir le projet en ligne
                 </span>
