@@ -2,7 +2,6 @@ import Scene1 from '../composants/scene1'; // OK comme ça
 import TexteDefilant from '../composants/TexteDefilant'; // OK comme ça
 import Projets from '../composants/projets'; // OK comme ça<<<<<<<
 import Contact from '../app/contact/page' // OK comme ça<<<<<<<
-import AnimScroll from '../composants/animationModel'
 
 export default function Home() {
   return (
