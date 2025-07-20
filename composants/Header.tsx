@@ -14,7 +14,7 @@ export  function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
     return (
-        <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center bg-[#ECECEC]">
+        <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center bg-[#282828]">
             <div className="z-15">
                 
                 <Link href="/" className="text-white font-bold text-xl hover:text-purple-400 transition-colors z-15 ">
@@ -47,7 +47,7 @@ export  function Header() {
                     <li>
                         
                     
-                <Link href="/" className="text-white font-bold text-l hover:text-purple-400 transition-colors z-15 ">
+                <Link href="/Projets" className="text-white font-bold text-l hover:text-purple-400 transition-colors z-15 ">
                 Projets
                 
                 </Link>

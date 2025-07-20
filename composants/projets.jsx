@@ -161,11 +161,12 @@ const Projets = () => {
                 </svg>
               </div>
               <p className="text-lg leading-relaxed text-[#b0b0b0] mb-6 flex-grow relative z-10">{project.description}</p>
-              <Link href={project.link} passHref>
+              <Link href="/Projets" passHref>
                 <span className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px]">
-                  Voir le projet
+                  Voir les détails du projet
                 </span>
               </Link>
+                 
             </div>
           ))}
         </div>
