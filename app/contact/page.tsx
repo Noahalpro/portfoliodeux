@@ -4,7 +4,6 @@
 import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { all } from 'three/tsl';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

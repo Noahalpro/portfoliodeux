@@ -3,7 +3,7 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { Suspense, useEffect, useRef, useState, useMemo } from 'react';
-import { Group, Camera as ThreeCamera, AnimationClip, Vector3, Points, BufferGeometry, PointsMaterial, Mesh } from 'three';
+import { Group, Camera as ThreeCamera, AnimationClip, Vector3, Points, Mesh } from 'three';
 import * as THREE from 'three';
 import { gsap } from 'gsap'; // Import GSAP
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
