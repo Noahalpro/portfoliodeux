@@ -30,7 +30,7 @@ export  function Header() {
             
                 
         <button onClick={toggleMenu} className="text-xl z-30">
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="white"/>
+          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="text-white"/>
         </button>
         
 

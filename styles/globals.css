@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Dancing Script'; /* Le nom que tu utiliseras dans tes classes CSS */
+  src: url('/font/Dancing.ttf') format('truetype'); /* Chemin vers ton fichier .ttf */
+  font-weight: normal; /* ou la graisse spécifique si ton fichier la représente (e.g., 400) */
+  font-style: normal;
+  font-display: swap; /* Assure un affichage rapide du texte avec une police de secours */
+}
 
 :root {
   --background: #ffffff;
@@ -25,3 +32,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.text-shadow {
+  text-shadow: 1px 1px 6px rgba(204, 204, 204, 0.8); 
+}
+
+.text-shadow-sm {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-lg {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.font-dancing {
+  font-family: 'Dancing Script', cursive; /* 'cursive' est une police de secours générique pour les polices manuscrites */
+}
+
