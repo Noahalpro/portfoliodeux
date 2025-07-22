@@ -48,7 +48,7 @@ export default function PlusieursTextes() {
       <div className=' texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px]'>
         <p className=' text-shadow '>
           
-          <span className=''>Une cube qui répond à des besoin tout en étant efficace c’est vrai</span>
+          <span className=''>Un cube qui répond à des besoins tout en étant efficace c’est vrai</span>
           
         </p>
         
@@ -60,7 +60,7 @@ export default function PlusieursTextes() {
 
       <div className='bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px]'>
         <p className='texte-anim  text-shadow'>
-          <span className='bg-black'>mais ce cube aurait un problème…</span>
+          <span className=''>mais ce cube aurait un problème…</span>
         </p>
       </div>
       
@@ -107,7 +107,7 @@ export default function PlusieursTextes() {
 
       <div>
         <p className='texte-anim bg-[#1a1a1a] bg-opacity-0 rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px] text-shadow'>
-          <span className=''>mais si on y rajoutait une dimension artistique/ spéciale qui de plus mettrai en avant l’efficacité du projet ?</span>
+          <span className=''>mais si on y rajoutait une dimension artistique/spéciale qui de plus mettrai en avant l’efficacité du projet ?</span>
         </p>
       </div>
 
@@ -116,7 +116,7 @@ export default function PlusieursTextes() {
 
       <div>
         <p className='texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px] text-shadow'>
-          <span className=''>Ce serait un cube qui montre aux autres qu’elle est au dessus de la masse sans le justifier car elle incarnerait l’innovation par son harmonie !</span>
+          <span className=''>Ce serait un cube qui montre aux autres qu’il est au dessus de la masse sans le justifier car il incarnerait l’innovation par son harmonie !</span>
         </p>
       </div>
 
