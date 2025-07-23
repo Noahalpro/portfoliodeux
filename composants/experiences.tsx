@@ -9,7 +9,7 @@ function Experiences () {
             
         <ul className="flex flex-col justify-center gap-10">
             
-            <li className="lg:flex border-3 border-[#4a4a4a] py-5 px-5 rounded-xl ">
+            <li className="lg:flex border-3 bg-[#282828] border-[#4a4a4a] py-5 px-5 rounded-xl ">
                 <div>
                 
                 <h2 className="font-bold text-2xl ">Web developpeur</h2>
@@ -21,7 +21,7 @@ function Experiences () {
             </li>
             <li>
                 <h2 className="font-bold text-2xl mb-10">Stack Maîtrisée :</h2></li>
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl">
+            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
             
 
                 <div className="flex flex-col justify-center items-center gap-8">
@@ -42,7 +42,7 @@ Permet de styliser les pages : mise en page, couleurs, animations, responsive de
                 </div>
                 
             </li>
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl">
+            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
             
                 
 
@@ -54,14 +54,14 @@ Permet de styliser les pages : mise en page, couleurs, animations, responsive de
 
                 <p> <span className="font-bold">JS: </span> Langage de programmation qui rend les sites interactifs : animations, gestion des clics, formulaires, appels API, etc.
                     <br /><br /><span className="font-bold">React: </span> Bibliothèque JavaScript pour construire des interfaces modernes en composants. Utilisation des hooks (useState, useEffect…), du routing et de la gestion d’état.
-                <br /><br /><span className="font-bold">Next.js: </span>Next.js : Framework React puissant que j’utilise pour créer des applications web performantes, SEO-friendly et scalables. Il facilite le rendu côté serveur (SSR), la génération statique (SSG) et la navigation rapide, tout en offrant une structure claire 
+                <br /><br /><span className="font-bold">Next.js: </span>Framework React puissant que j’utilise pour créer des applications web performantes, SEO-friendly et scalables. Il facilite le rendu côté serveur (SSR), la génération statique (SSG) et la navigation rapide, tout en offrant une structure claire 
                 </p>
                 
 
                 </div>
                 
             </li>
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl">
+            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
             
                 
 
@@ -83,7 +83,7 @@ Framework minimaliste pour Node.js. Il facilite la création d’API REST, la ge
                 
             </li>
             
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl">
+            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
             
                 
 
