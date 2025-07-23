@@ -32,7 +32,7 @@ export default function PlusieursTextes() {
   }, []);
 
   return (
-    <section className='text-2xl text-left mx-auto text-white font-medium'>
+    <section className='text-2xl text-left mx-auto text-white font-medium px-4'>
       <div className='  bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px]'>
         <p className=' texte-anim text-shadow '>
           <span className=''>Que serait la technologie, sans mise en valeur ?<br /></span>
@@ -48,7 +48,7 @@ export default function PlusieursTextes() {
       <div className=' texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px]'>
         <p className=' text-shadow '>
           
-          <span className=''>Un cube qui répond à des besoins tout en étant efficace c’est vrai</span>
+          <span className=''>Un cube qui répondrait à des besoins tout en étant efficace certes</span>
           
         </p>
         
@@ -116,7 +116,7 @@ export default function PlusieursTextes() {
 
       <div>
         <p className='texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px] text-shadow'>
-          <span className=''>Ce serait un cube qui montre aux autres qu’il est au dessus de la masse sans le justifier car il incarnerait l’innovation par son harmonie !</span>
+          <span className=''>Ce serait un cube qui démontrerait qu’il serait au dessus de la masse sans se justifier car il incarnerait l’innovation de lui même !</span>
         </p>
       </div>
 
@@ -124,7 +124,7 @@ export default function PlusieursTextes() {
         <div className='h-[500px]'></div>
       <div>
         <p className='texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[300px] text-shadow'>
-          <span className=''>Notre approche ? Créer des projets qui excellent par leur efficacité, leur qualité, leur innovation et leur harmonie.</span>
+          <span className=''>Notre approche ? Créer des projets qui excellent par leur efficacité, leur qualité et leur innovation.</span>
         </p>
       </div>
 

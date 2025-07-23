@@ -14,7 +14,7 @@ export  function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
     return (
-        <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center bg-[#282828]">
+        <nav className="relative max-w mx-auto h-20 flex flex-row justify-between items-center bg-[#282828] px-4">
             <div className="z-15">
                 
                 <Link href="/" className="text-white font-bold text-xl hover:text-purple-400 transition-colors z-15 ">

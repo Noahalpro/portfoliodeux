@@ -1,0 +1,27 @@
+%!Adobe-FontList 1.24
+%Locale:0x40c
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DancingScript-Regular
+FamilyName:Dancing Script
+StyleName:Regular
+FullName:Dancing Script Regular
+MenuName:Dancing Script
+FamilyPrefix:DancingScript
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\noahp\Documents\portofolio dev\port nono\portfoliodeux\public\Font\Dancing.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:TrueTypeVariableFont
+FileLength:130480
+FileModTime:1753101445
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Dancing Script
+%EndFont
+
