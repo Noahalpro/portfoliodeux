@@ -6,14 +6,13 @@ import Experieces from '../composants/experiences' // OK comme ça<<<<<<<
 
 export default function Home() {
   return (
-    <main className="relative z-10">
+    <main className="relative">
       
       <TexteDefilant />
       <Scene1 />
       <div id="projets-section">
-  
-      <Contact />
       <Experieces />
+      <Contact />
       <Projets />
 </div>
     </main>

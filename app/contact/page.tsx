@@ -112,7 +112,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 flex justify-center items-center min-h-[calc(100vh-160px)] overflow-hidden font-inter relative">
+    <section className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 flex justify-center items-center min-h-screen overflow-hidden font-inter relative">
       <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none">
         <svg className="w-[800px] h-[950px] max-w-full max-h-full" viewBox="0 0 550 650" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

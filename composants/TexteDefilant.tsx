@@ -129,12 +129,9 @@ export default function PlusieursTextes() {
       </div>
 
       
-        <div className='h-[500px]'></div>
+        <div className='h-[400px]'></div>
 
       
-      <div className='texte-anim bg-[#1a1a1a] rounded-xl py-5 px-4 font-inter overflow-hidden w-[400px] text-center text-shadow mb-10'>
-          <span className=''>Un projet ? Une collaboration ? Une question ?</span>
-      </div>
     </section>
   );
 }
