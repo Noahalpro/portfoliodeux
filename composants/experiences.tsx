@@ -19,6 +19,18 @@ function Experiences () {
                 </div>
                 <p>Je suis formé à créer des sites et applications web modernes, aussi bien côté client (front-end) que serveur (back-end). Je maîtrise HTML5, CSS3 et JavaScript pour construire des interfaces dynamiques avec React.js. Je développe également des API avec Node.js et Express, et je gère les données via MongoDB. Grâce à des projets concrets, j’ai appris à concevoir des applications complètes et à les déployer, tout en construisant un portfolio professionnel.</p>
             </li>
+            <li className="lg:flex items-center border-3 bg-[#282828] border-[#4a4a4a] py-5 px-5 rounded-xl">
+                <div>
+                
+                <h2 className="font-bold text-2xl ">Certified Solutions Architect – Associate</h2>
+                
+                <Image src="/logoaws.png" alt="aws" width={200} height={200} className="w-[90px] h-auto object-contain mx-auto"/>
+                <h3 className="text-gray-400">- 2025 -</h3>
+                </div>
+                <p>J'ai acquis les compétences pour concevoir et déployer des architectures Cloud résilientes, sécurisées et optimisées en coûts.
+
+Mon expertise se concentre sur les services fondamentaux d'AWS tels que EC2, Lambda, VPC, S3, RDS, IAM, et les pratiques DevOps avec CloudFormation et Auto Scaling. Je sais transformer les exigences fonctionnelles en solutions Cloud évolutives et efficaces.</p>
+            </li>
             <li>
                 <h2 className="font-bold text-2xl mb-10">Stack Maîtrisée :</h2></li>
             <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
@@ -68,6 +80,7 @@ Permet de styliser les pages : mise en page, couleurs, animations, responsive de
                 <div className="flex flex-col justify-center items-center gap-8">
                 
                 <Image src="/jsmongo.png" alt="html5" width={200} height={200} className="w-[200px] "/>
+                <Image src="/logoaws.png" alt="html5" width={200} height={200} className="w-[100px] "/>
                 
                 <h3 className="text-gray-400">Back-end</h3>
             
@@ -77,6 +90,9 @@ Framework minimaliste pour Node.js. Il facilite la création d’API REST, la ge
 
                     <br /><span className="font-bold">MongoDB: </span>
                     Base de données NoSQL, orientée documents. Idéale pour stocker des objets JavaScript (JSON) de façon flexible et scalable.
+
+                    <br /><span className="font-bold">AWS: </span>
+                    j'utilise EC2 pour le calcul virtuel et Lambda pour le Serverless. Je sécurise et isole les ressources avec VPC (réseau) et IAM (gestion des accès). Pour le stockage, je choisis entre S3 et RDS pour les bases de données. Enfin, j'assure l'évolutivité avec Auto Scaling et automatise tout le déploiement d'infrastructure grâce à CloudFormation.
 </p>
 
                 </div>

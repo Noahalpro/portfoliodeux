@@ -38,13 +38,14 @@ export function Header() {
 
   const isContactPage = pathname === '/contact'; // Condition pour le style du header
   const isProjetPage = pathname === '/Projets'; // Condition pour le style du header
+  const isAwsProjetPage = pathname === '/awsprojet'; // Condition pour le style du header
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
 
   return (
-    <nav className={`relative z-20 max-w-full mx-auto h-20 flex flex-row justify-between items-center px-4 ${isContactPage || isProjetPage ? 'bg-[#1a1a1a]' : ''} transition-colors duration-300`}>
+    <nav className={`relative z-20 max-w-full mx-auto h-20 flex flex-row justify-between items-center px-4 ${isContactPage || isProjetPage || isAwsProjetPage? 'bg-[#1a1a1a]' : ''} transition-colors duration-300`}>
         <div className="">
         <Link href="/" className="text-white font-bold text-xl hover:text-purple-400 transition-colors">
           Noah Aldeguer

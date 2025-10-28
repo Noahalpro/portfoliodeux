@@ -8,17 +8,10 @@ import Link from 'next/link';
 const projectData = [
   {
     id: 1,
-    title: 'Site E-commerce Front-end',
-    description: 'Développement du front-end d’une plateforme e-commerce moderne avec React, Next.js et Tailwind CSS, offrant une interface fluide et intuitive.',
-    image: '/ImageTamp.png',
+    title: 'Application d’automatisation SMS hébergé sur AWS',
+    description: 'Conception et déploiement complet d’une application d’envoi de SMS marketing hébergée sur le cloud AWS',
+    image: '/miniature_projet_aws.png',
     link: 'https://tampp.vercel.app/',
-  },
-  {
-    id: 2,
-    title: 'Mon Vieux Grimmoire',
-    description: 'Développement du back-end d\'une application web intuitive pour mettre en ligne, noter et voir des livres ainsi que leur note.',
-    image: '/monvieuxgrimmoir.png',
-    link: 'https://mon-projet-backend-lyi9bkyof-noahalpros-projects.vercel.app/',
   },
 ];
 
@@ -134,7 +127,7 @@ const Projets = () => {
   return (
     <section id="projets" className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 font-inter overflow-hidden">
       <div className="max-w-6xl mx-auto text-center px-4 md:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mes Projets Récents</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mon Projet récent</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center items-stretch">
           {projectData.map((project, index) => (
             <div

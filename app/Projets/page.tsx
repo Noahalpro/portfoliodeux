@@ -19,21 +19,12 @@ type Project = {
 const projectData: Project[] = [
   {
     id: 1,
-    title: 'Site E-commerce Front-end',
+    title: 'Conception et déploiement complet d’une application d’envoi de SMS marketing hébergée sur le cloud AWS',
     description:
-      "Développement du front-end complet d’une plateforme e-commerce moderne, ergonomique et responsive, construite avec React, Next.js et Tailwind CSS. L’interface utilisateur a été pensée pour offrir une expérience fluide, rapide et optimisée sur tous types d’écrans. Le projet intègre des pages produits dynamiques, des fiches détaillées, un système de panier interactif, des filtres de navigation ainsi qu’un design soigné et personnalisé. Stack technique : React.js avec Next.js pour le rendu côté serveur (SSR) et le routage performant, Tailwind CSS pour le style utilitaire et responsive, gestion d’état local pour le panier, composants modulaires et réutilisables, et bonnes pratiques de performance web (Lazy Loading, structure SEO-friendly). Ce projet met en pratique les standards actuels du développement front-end moderne tout en posant une base évolutive pour une application e-commerce complète.",
+      "Voyons ensemble comment en 2 temps mettre sur le marché cette solution SAAS déployé sur le Cloud AWS",
     image: '/ImageTamp.png',
-    link: 'https://tampp.vercel.app/',
+    link: '/awsprojet',
     linkgit: 'https://github.com/Noahalpro/tampp',
-  },
-  {
-    id: 2,
-    title: 'Mon Vieux Grimoire',
-    description:
-      "Développement complet du back-end d’une application web intuitive permettant aux utilisateurs de mettre en ligne des livres, de les noter et de consulter les avis. Authentification sécurisée, gestion des utilisateurs, et système de notation multi-utilisateur. Fonctionnalités principales : ajout de livres avec titre, auteur, image et description ; notation de 0 à 5 étoiles ; consultation de la moyenne des notes ; création de compte et connexion via JWT. Stack technique : Node.js avec Express pour le serveur, MongoDB et Mongoose pour la base de données, middleware personnalisés pour la sécurité (auth, JWT, bcrypt). Architecture en MVC claire, validation des entrées, gestion des erreurs, et API REST sécurisée, prête à l’intégration front-end. Ce projet met en œuvre les bonnes pratiques du back-end moderne et démontre la capacité à sécuriser et structurer une application web en profondeur.",
-    image: '/monvieuxgrimmoir.png',
-    link: 'https://mon-projet-backend-lyi9bkyof-noahalpros-projects.vercel.app/',
-    linkgit: 'https://github.com/Noahalpro/mon-projet-backend',
   },
 ];
 
@@ -155,7 +146,7 @@ const Projets: React.FC = () => {
   return (
     <section id="projets" className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 font-inter overflow-hidden">
       <div className="max-w-6xl mx-auto text-center px-4 md:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mes Projets Récents</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mon projet récent</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center items-stretch">
           {projectData.map((project, index) => (
             <div
@@ -187,12 +178,12 @@ const Projets: React.FC = () => {
               
               {/* --- CORRECTED LINK USAGE --- */}
               {/* Wrap an <a> tag directly inside Link, then apply styles to <a> */}
-              <Link href={project.linkgit} className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px] my-6">
+              {/*<Link href={project.linkgit} className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px] my-6">
                 Voir le code source du projet
-              </Link>
+              </Link>*/}
               
               <Link href={project.link} className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px]">
-                Voir le projet en ligne
+                Voir les détails de conception du projet
               </Link>
             </div>
           ))}
