@@ -1,4 +1,5 @@
 'use client';
+import ViewPleinEcran from "../../composants/viewPleinEcran"
 
 const Projetaws = () => {
   return (
@@ -36,8 +37,10 @@ const Projetaws = () => {
           <p>
             Pour le MVP, l’objectif était de concevoir une infrastructure rapide à déployer, sécurisée et suffisamment scalable pour supporter les premiers utilisateurs sans complexité inutile.
           </p>
-
-          <p>Draw.io infra mvp</p>
+          <ViewPleinEcran
+        src="/Architecture Cloud SAAS 5.svg"
+        alt="Diagramme d'architecture AWS pour le SaaS SMS"
+            />
 
           <ul>
             <li>Frontend : développé avec Next.js et React, hébergé sur Vercel.</li>
@@ -65,8 +68,6 @@ const Projetaws = () => {
             Du coup on aura une application plus résiliente, plus sécurisée et économiquement optimisée.
           </p>
 
-          <p>draw.io archi</p>
-
           <h2 className="text-4xl md:text-3xl font-bold text-[#f0f0f0] mb-5 tracking-[-0.02em]">
             Évolutions futures
           </h2>
@@ -78,12 +79,16 @@ const Projetaws = () => {
             </li>
           </ul>
         </div>
-      </div>
 
-      <div>
+        
         <p>
           Vidéo de retour, problème rencontré etc… Dire que j’ai passé en même temps la formation AWS Solutions Architect pour m’imprégner et passer à l’action sur la majeure partie des services AWS, etc.
         </p>
+      </div>
+
+      
+
+      <div>
       </div>
     </section>
   );
