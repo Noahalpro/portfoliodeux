@@ -140,7 +140,7 @@ const Projets = () => {
             <div
               key={project.id}
               ref={el => cardRefs.current[index] = el}
-              onClick={() => router.push("/Projets")}
+              onClick={() => router.push("/awsprojet")}
               className="relative bg-[#282828] rounded-xl p-8 shadow-lg border border-[#333] flex flex-col items-center text-center transition-transform duration-300 ease-out cursor-pointer will-change-transform"
             >
               {/* Image standard en <img /> */}
@@ -161,7 +161,7 @@ const Projets = () => {
                 </svg>
               </div>
               <p className="text-lg leading-relaxed text-[#b0b0b0] mb-6 flex-grow relative z-10">{project.description}</p>
-              <Link href="/Projets" passHref>
+              <Link href="/awsprojet" passHref>
                 <span className="inline-block bg-[#4a4a4a] text-[#f0f0f0] py-3 px-6 rounded-lg text-base font-semibold transition-colors duration-300 ease-out border-none cursor-pointer relative z-10 hover:bg-[#6a6a6a] hover:translate-y-[-2px]">
                   Voir les détails du projet
                 </span>
