@@ -38,7 +38,7 @@ const Projetaws = () => {
             Pour le MVP, l’objectif était de concevoir une infrastructure rapide à déployer, sécurisée et suffisamment scalable pour supporter les premiers utilisateurs sans complexité inutile.
           </p>
           <ViewPleinEcran
-        src="/Architecture Cloud SAAS 5.svg"
+        src="/Architecture10.drawio.svg"
         alt="Diagramme d'architecture AWS pour le SaaS SMS"
             />
 
