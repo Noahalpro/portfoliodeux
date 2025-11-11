@@ -31,7 +31,7 @@ const Projetaws = () => {
           </h2>
 
           <h2 className="text-xl md:text-xl font-bold text-[#f0f0f0] mb-1 tracking-[-0.02em]">
-            Mis à jour le 28/10/25
+            Mis à jour le 10/11/25
           </h2>
 
           <p>
@@ -73,17 +73,12 @@ const Projetaws = () => {
           </h2>
 
           <ul>
-            <li>Support d’autres plateformes e-commerce (WooCommerce, Prestashop).</li>
+            <li>- Support d’autres plateformes e-commerce (WooCommerce, Prestashop).</li>
             <li>
-              Implémentation d’un moteur de recommandation IA intelligent entraîné sur les données des conversions en fonction du temps et du type de client pour optimiser les heures d’envoi.
+              - Implémentation d’un moteur de recommandation IA intelligent entraîné sur les données des conversions en fonction du temps et du type de client pour optimiser les heures d’envoi.
             </li>
           </ul>
         </div>
-
-        
-        <p>
-          Vidéo de retour, problème rencontré etc… Dire que j’ai passé en même temps la formation AWS Solutions Architect pour m’imprégner et passer à l’action sur la majeure partie des services AWS, etc.
-        </p>
       </div>
 
       

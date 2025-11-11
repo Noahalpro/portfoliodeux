@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
 
 const projectData = [
   {
@@ -12,8 +13,11 @@ const projectData = [
     description: 'Conception et déploiement complet d’une application d’envoi de SMS marketing hébergée sur le cloud AWS',
     image: '/miniature_projet_aws.png',
     link: 'https://tampp.vercel.app/',
+    
   },
 ];
+
+
 
 const baseScribblePaths = [
   "M 20 10 Q 10 10 10 20 L 10 60 Q 10 70 20 70 L 230 70 Q 240 70 240 60 L 240 20 Q 240 10 230 10 Z",
@@ -63,6 +67,7 @@ const generateRandomScribblePath = (basePath, maxOffset = 8) => {
 
 const Projets = () => {
   const cardRefs = useRef([]);
+  const router = useRouter();
   const scribbleRefs = useRef([]);
   const [randomScribblePaths, setRandomScribblePaths] = useState([]);
 
@@ -124,6 +129,8 @@ const Projets = () => {
     });
   }, { scope: cardRefs, dependencies: [randomScribblePaths] });
 
+
+  
   return (
     <section id="projets" className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 font-inter overflow-hidden">
       <div className="max-w-6xl mx-auto text-center px-4 md:px-6 lg:px-8">
@@ -133,6 +140,7 @@ const Projets = () => {
             <div
               key={project.id}
               ref={el => cardRefs.current[index] = el}
+              onClick={() => router.push("/Projets")}
               className="relative bg-[#282828] rounded-xl p-8 shadow-lg border border-[#333] flex flex-col items-center text-center transition-transform duration-300 ease-out cursor-pointer will-change-transform"
             >
               {/* Image standard en <img /> */}

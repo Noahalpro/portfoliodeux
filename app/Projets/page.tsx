@@ -7,6 +7,8 @@ import Link from 'next/link';
 // Import the Image component from Next.js for optimized images
 import Image from 'next/image';
 
+import { useRouter } from "next/navigation";
+
 type Project = {
   id: number;
   title: string;
@@ -22,7 +24,7 @@ const projectData: Project[] = [
     title: 'Conception et déploiement complet d’une application d’envoi de SMS marketing hébergée sur le cloud AWS',
     description:
       "Voyons ensemble comment en 2 temps mettre sur le marché cette solution SAAS déployé sur le Cloud AWS",
-    image: '/ImageTamp.png',
+    image: '/miniature_projet_aws.png',
     link: '/awsprojet',
     linkgit: 'https://github.com/Noahalpro/tampp',
   },
@@ -70,6 +72,7 @@ const generateRandomScribblePath = (basePath: string, maxOffset = 8): string => 
 };
 
 const Projets: React.FC = () => {
+  const router = useRouter();
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const scribbleRefs = useRef<Array<SVGPathElement | null>>([]);
   const [randomScribblePaths, setRandomScribblePaths] = useState<string[]>([]);
@@ -152,6 +155,7 @@ const Projets: React.FC = () => {
             <div
               key={project.id}
               ref={(el) => setCardRef(el, index)}
+              onClick={() => router.push("/awsprojet")}
               className="relative bg-[#282828] rounded-xl p-8 shadow-lg border border-[#333] flex flex-col items-center text-center transition-transform duration-300 ease-out cursor-pointer will-change-transform"
             >
               {/* Image optimization remains: Good. */}
