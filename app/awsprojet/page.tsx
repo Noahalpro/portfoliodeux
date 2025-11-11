@@ -43,13 +43,14 @@ const Projetaws = () => {
             />
 
           <ul>
-            <li>Frontend : développé avec Next.js et React, hébergé sur Vercel.</li>
+            <li>Frontend : développé avec Next.js et React, hébergé sur Vercel. Connecté à Amazon Cognito pour l’authentification des users Admin. </li>
             <li>Backend : API conteneurisée déployée sur AWS App Runner.</li>
             <li>Base de données : Amazon RDS (PostgreSQL).</li>
-            <li>Stockage : Amazon S3 pour les rapports d’analytics et les factures.</li>
+            <li>Stockage : Amazon S3 pour les rapports d’analytics et les factures. (S3 Lifecycle pour archiver automatiquement les rapports anciens.)</li>
             <li>Sécurité : AWS Secrets Manager pour la gestion des clés API et des accès sensibles.</li>
             <li>Planification des campagnes : EventBridge Scheduler pour exécuter les envois au moment prévu.</li>
-            <li>Messagerie : SQS pour gérer les files d’attente et garantir la fiabilité des envois.</li>
+            <li>Messagerie : SQS pour gérer les files d’attente et garantir la fiabilité des envois. Consommées par AWS Lambda</li>
+            <li>Suivi des livraisons SMS : API Gateway reçoit les webhooks de l'api sms sender, traités par AWS Lambda, qui met à jour les statuts dans DynamoDB (livré, échec, expiré).</li>
             <li>Tracking de liens : API Gateway et Lambda pour rediriger les clics et enregistrer les statistiques dans DynamoDB.</li>
             <li>Synchronisation des données : webhooks Shopify et Stripe gérés par Lambda.</li>
             <li>Monitoring : CloudWatch pour la supervision, les métriques et les alarmes.</li>
