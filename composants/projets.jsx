@@ -132,10 +132,10 @@ const Projets = () => {
 
   
   return (
-    <section id="projets" className="bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 font-inter overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center px-4 md:px-6 lg:px-8">
+    <section id="projets" className=" bg-[#1a1a1a] text-[#e0e0e0] py-20 px-4 font-inter overflow-hidden">
+      <div className="max-w-md mx-auto text-center px-4 md:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mon Projet récent</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-10 justify-center items-center">
           {projectData.map((project, index) => (
             <div
               key={project.id}

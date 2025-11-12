@@ -8,17 +8,6 @@ function Experiences () {
         <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f0] mb-16 tracking-[-0.02em]">Mon parcours et compéteneces</h2>
             
         <ul className="flex flex-col justify-center gap-10">
-            
-            <li className="lg:flex border-3 bg-[#282828] border-[#4a4a4a] py-5 px-5 rounded-xl ">
-                <div>
-                
-                <h2 className="font-bold text-2xl ">Web developpeur</h2>
-                
-                <Image src="/open.png" alt="html5" width={250} height={250} className="w-[250px] h-auto object-contain mx-auto"/>
-                <h3 className="text-gray-400">- 2025 -</h3>
-                </div>
-                <p>Je suis formé à créer des sites et applications web modernes, aussi bien côté client (front-end) que serveur (back-end). Je maîtrise HTML5, CSS3 et JavaScript pour construire des interfaces dynamiques avec React.js. Je développe également des API avec Node.js et Express, et je gère les données via MongoDB. Grâce à des projets concrets, j’ai appris à concevoir des applications complètes et à les déployer, tout en construisant un portfolio professionnel.</p>
-            </li>
             <li className="lg:flex items-center border-3 bg-[#282828] border-[#4a4a4a] py-5 px-5 rounded-xl">
                 <div>
                 
@@ -27,47 +16,40 @@ function Experiences () {
                 <Image src="/logoaws.png" alt="aws" width={200} height={200} className="w-[90px] h-auto object-contain mx-auto"/>
                 <h3 className="text-gray-400">- 2025 -</h3>
                 </div>
-                <p>J'ai acquis les compétences pour concevoir et déployer des architectures Cloud résilientes, sécurisées et optimisées en coûts.
-
-Mon expertise se concentre sur les services fondamentaux d'AWS tels que EC2, Lambda, VPC, S3, RDS, IAM, et les pratiques DevOps avec CloudFormation et Auto Scaling. Je sais transformer les exigences fonctionnelles en solutions Cloud évolutives et efficaces.</p>
+                <p className="px-5">En tant que Solution Architect AWS, j’ai appris à concevoir des architectures Cloud modernes, sécurisées et évolutives.
+Je maîtrise les services clés d’AWS comme EC2, S3, RDS, VPC et IAM, ainsi que les technologies serverless telles que Lambda, API Gateway, DynamoDB et CloudFront, qui permettent de créer des applications hautement disponibles sans gestion d’infrastructure.
+J’applique les bonnes pratiques DevOps avec CloudFormation, CI/CD et le monitoring via CloudWatch, afin de garantir automatisation, performance et optimisation des coûts.</p>
+            </li>
+            <li className="lg:flex border-3 bg-[#282828] border-[#4a4a4a] py-5 px-5 rounded-xl ">
+                <div>
+                
+                <h2 className="font-bold text-2xl ">Web developpeur</h2>
+                
+                <Image src="/open.png" alt="html5" width={250} height={250} className="w-[250px] h-auto object-contain mx-auto"/>
+                <h3 className="text-gray-400">- 2025 -</h3>
+                </div>
+                <p className="px-5">Je suis formé à créer des sites et applications web modernes, aussi bien côté client (front-end) que serveur (back-end). Je maîtrise HTML5, CSS3 et JavaScript pour construire des interfaces dynamiques avec React.js. Je développe également des API avec Node.js et Express, et je gère les données via MongoDB. Grâce à des projets concrets, j’ai appris à concevoir des applications complètes et à les déployer, tout en construisant un portfolio professionnel.</p>
             </li>
             <li>
                 <h2 className="font-bold text-2xl mb-10">Stack Maîtrisée :</h2></li>
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
+            <li className="flex justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
             
 
                 <div className="flex flex-col justify-center items-center gap-8">
                     
                 
-                <Image src="/tail.png" alt="html5" width={200} height={200} className="w-[200px] h-auto object-contain "/>
-                
                 <h3 className="text-gray-400">Front-end</h3>
+                <Image src="/frontendlogo.png" alt="html5" width={200} height={200} className="w-[200px] h-auto object-contain "/>
                 
-                <p> 
-<span className="font-bold">HTML5: </span>Le langage de base pour structurer les pages web (titres, paragraphes, images, formulaires…).
-
-<br /><br /><span className="font-bold">CSS3: </span>
-Permet de styliser les pages : mise en page, couleurs, animations, responsive design (adapté aux mobiles/tablettes).
-                <br /><br /><span className="font-bold">Tailwind CSS: </span>Framework CSS utilitaire qui me permet de créer rapidement des interfaces modernes, responsives et cohérentes, tout en optimisant la productivité.
-</p>
+                
 
                 </div>
-                
-            </li>
-            <li className="flex-col justify-center items-center border-3 border-[#4a4a4a] py-5 px-5 rounded-xl bg-[#282828]">
-            
-                
-
                 <div className="flex flex-col justify-center items-center gap-8">
+                <h3 className="text-gray-400">Backend</h3>
                 
-                <Image src="/reactjs.png" alt="html5" width={200} height={200} className="w-[200px] h-auto object-contain "/>
-                
-                <h3 className="text-gray-400">Front-end</h3>
+                <Image src="/backpng.png" alt="html5" width={200} height={200} className="w-[200px] h-auto object-contain "/>
 
-                <p> <span className="font-bold">JS: </span> Langage de programmation qui rend les sites interactifs : animations, gestion des clics, formulaires, appels API, etc.
-                    <br /><br /><span className="font-bold">React: </span> Bibliothèque JavaScript pour construire des interfaces modernes en composants. Utilisation des hooks (useState, useEffect…), du routing et de la gestion d’état.
-                <br /><br /><span className="font-bold">Next.js: </span>Framework React puissant que j’utilise pour créer des applications web performantes, SEO-friendly et scalables. Il facilite le rendu côté serveur (SSR), la génération statique (SSG) et la navigation rapide, tout en offrant une structure claire 
-                </p>
+                
                 
 
                 </div>
@@ -78,22 +60,13 @@ Permet de styliser les pages : mise en page, couleurs, animations, responsive de
                 
 
                 <div className="flex flex-col justify-center items-center gap-8">
+                    
+                <h3 className="text-gray-400">Infrastructure</h3>
                 
-                <Image src="/jsmongo.png" alt="html5" width={200} height={200} className="w-[200px] "/>
-                <Image src="/logoaws.png" alt="html5" width={200} height={200} className="w-[100px] "/>
+                <Image src="/infrapng.png" alt="infra" width={250} height={250} className="w-[250px] h-auto object-contain "/>
+
                 
-                <h3 className="text-gray-400">Back-end</h3>
-            
-<p> <span className="font-bold">Node.js: </span> Environnement d’exécution JavaScript côté serveur. Il permet de gérer les requêtes, fichiers, utilisateurs, etc.
-                    <br /><span className="font-bold">Express.js: </span>
-Framework minimaliste pour Node.js. Il facilite la création d’API REST, la gestion des routes et des middlewares.
-
-                    <br /><span className="font-bold">MongoDB: </span>
-                    Base de données NoSQL, orientée documents. Idéale pour stocker des objets JavaScript (JSON) de façon flexible et scalable.
-
-                    <br /><span className="font-bold">AWS: </span>
-                    j'utilise EC2 pour le calcul virtuel et Lambda pour le Serverless. Je sécurise et isole les ressources avec VPC (réseau) et IAM (gestion des accès). Pour le stockage, je choisis entre S3 et RDS pour les bases de données. Enfin, j'assure l'évolutivité avec Auto Scaling et automatise tout le déploiement d'infrastructure grâce à CloudFormation.
-</p>
+                
 
                 </div>
                 
@@ -104,10 +77,9 @@ Framework minimaliste pour Node.js. Il facilite la création d’API REST, la ge
                 
 
                 <div className="flex flex-col justify-center items-center gap-8">
-                
-                <Image src="/blenderthree.png" alt="html5" width={200} height={200} className="w-[200px] "/>
                 
                 <h3 className="text-gray-400">Conception 3D</h3>
+                <Image src="/blenderthree.png" alt="html5" width={200} height={200} className="w-[200px] "/>
             
                 <p>
                 <span className="font-bold">Three.js: </span>

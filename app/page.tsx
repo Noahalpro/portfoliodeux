@@ -12,8 +12,8 @@ export default function Home() {
       <Scene1 />
       <div id="projets-section">
       <Experieces />
-      <Contact />
       <Projets />
+      <Contact />
 </div>
     </main>
   );
